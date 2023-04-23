@@ -1,0 +1,30 @@
+{
+  "name": "media-trigger",
+  "version": "0.0.1",
+  "description": "This is a simple function to run code on entry and exit from media queries",
+  "author": "ux-ui.pro",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ux-ui-pro/media-trigger.git"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "src/js/media-trigger.js",
+  "bugs": {
+    "url": "https://github.com/ux-ui-pro/media-trigger/issues"
+  },
+  "type": "module",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": [
+    "media",
+    "queries",
+    "events",
+    "trigger",
+    "check"
+  ]
+}
