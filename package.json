@@ -1,6 +1,6 @@
 {
   "name": "media-trigger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a simple function to run code on entry and exit from media queries",
   "author": "ux-ui.pro",
   "license": "MIT",
