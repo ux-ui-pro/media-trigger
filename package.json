@@ -1,6 +1,6 @@
 {
   "name": "media-trigger",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is a simple function to run code on entry and exit from media queries",
   "author": "ux-ui.pro",
   "license": "MIT",
@@ -8,18 +8,21 @@
     "type": "git",
     "url": "git+https://github.com/ux-ui-pro/media-trigger.git"
   },
-  "files": [
-    "dist",
-    "src"
-  ],
-  "main": "src/js/media-trigger.js",
   "bugs": {
     "url": "https://github.com/ux-ui-pro/media-trigger/issues"
   },
-  "type": "module",
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {},
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
+  "scripts": {
+    "serve": "parcel watch",
+    "build": "parcel build",
+    "clean": "rm -rf dist .parcel-cache"
+  },
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  },
   "keywords": [
     "media",
     "queries",

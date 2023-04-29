@@ -24,23 +24,23 @@ $ npm i media-trigger
 
 ### Import
 ```javascript
-import { mediaTrigger } from 'media-trigger'
+import MediaTrigger from 'media-trigger'
 ```
 <br>
 
 ### Usage
 ```HTML
-mediaTrigger({
+new MediaTrigger({
     media: 'only screen and (max-width: 1199.98px), (any-pointer: coarse)',
-    entry: () => {
-        console.log('entry')
+    entry: (MQ) => {
+        console.log('Media query entered')
     },
-    exit: () => {
-        console.log('exit')
+    exit: (MQ) => {
+        console.log('Media query exited')
     },
-    change: () => {
-        console.log('change')
-    }
+    change: (MQ) => {
+        console.log('Media query changed')
+    },
 })
 ```
 <br>
