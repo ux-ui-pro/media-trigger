@@ -19,6 +19,7 @@ class $4fa36e821943b400$export$2e2bcd8739ae039 {
         this.entry = entry;
         this.exit = exit;
         this.change = change;
+        this.trigger(this.MQ);
     }
     trigger(MQ) {
         MQ.matches ? this.entry?.(MQ) : this.exit?.(MQ);

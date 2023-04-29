@@ -12,6 +12,8 @@ export default class MediaTrigger {
 		this.entry = entry
 		this.exit = exit
 		this.change = change
+
+		this.trigger(this.MQ)
 	}
 
 	trigger(MQ) {
