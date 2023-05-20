@@ -9,7 +9,7 @@
 [![GitHub package version](https://img.shields.io/github/package-json/v/ux-ui-pro/media-trigger.svg)](https://github.com/ux-ui-pro/media-trigger)
 [![NPM Downloads](https://img.shields.io/npm/dm/media-trigger.svg?style=flat)](https://www.npmjs.org/package/media-trigger)
 
-<sup><a href="https://bundlephobia.com/package/media-trigger">250B gzipped</a></sup>
+<sup><a href="https://bundlephobia.com/package/media-trigger">350B gzipped</a></sup>
 <h3><a href="https://codepen.io/ux-ui/pen/gOBQjzR">Demo</a></h3>
 
 </div>
