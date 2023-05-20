@@ -2,12 +2,7 @@ export default class MediaTrigger {
 	constructor({ media, entry, exit, change }) {
 		this.MQ = window.matchMedia(media)
 		this.handleChange = this.handleChange.bind(this)
-		this.handleOrientationChange = this.handleOrientationChange.bind(this)
-
-		this.trigger(this.MQ)
-
 		this.MQ.addEventListener('change', this.handleChange)
-		window.addEventListener('orientationchange', this.handleOrientationChange)
 
 		this.entry = entry
 		this.exit = exit
@@ -17,16 +12,17 @@ export default class MediaTrigger {
 	}
 
 	trigger(MQ) {
-		MQ.matches ? this.entry?.(MQ) : this.exit?.(MQ)
+		const current = MQ.matches
 
-		this.change?.(MQ)
+		if (current !== this.prev) {
+			current ? this.entry?.(MQ) : this.exit?.(MQ)
+
+			this.change?.(MQ)
+			this.prev = current
+		}
 	}
 
 	handleChange() {
 		this.trigger(this.MQ)
-	}
-
-	handleOrientationChange() {
-		this.trigger(window.matchMedia(this.MQ.media))
 	}
 }
