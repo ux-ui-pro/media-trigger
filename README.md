@@ -9,7 +9,9 @@
 [![GitHub package version](https://img.shields.io/github/package-json/v/ux-ui-pro/media-trigger.svg)](https://github.com/ux-ui-pro/media-trigger)
 [![NPM Downloads](https://img.shields.io/npm/dm/media-trigger.svg?style=flat)](https://www.npmjs.org/package/media-trigger)
 
-<sup><a href="https://bundlephobia.com/package/media-trigger">0.4kB gzipped</a></sup>
+<sup><a href="https://bundlephobia.com/package/media-trigger">250B gzipped</a></sup>
+<h3><a href="https://codepen.io/ux-ui/pen/gOBQjzR">Demo</a></h3>
+
 </div>
 <br>
 
@@ -32,7 +34,7 @@ import MediaTrigger from 'media-trigger'
 ### Usage
 ```HTML
 new MediaTrigger({
-    media: '(min-width: 1200px)',
+    media: '(min-width: 992px) and (any-pointer: fine)',
     entry: () => {
         console.log('Media query entered')
     },
