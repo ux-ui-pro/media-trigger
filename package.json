@@ -1,7 +1,7 @@
 {
   "name": "media-trigger",
-  "version": "2.1.0",
-  "description": "This is a simple class to execute code on entering and exiting media queries.",
+  "version": "2.2.0",
+  "description": "This is a simple class for tracking changes in media expressions and calling the appropriate functions when these events are triggered.",
   "author": "ux-ui.pro",
   "license": "MIT",
   "repository": {

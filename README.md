@@ -3,7 +3,7 @@
 
 <h1>media-trigger</h1>
 
-<p><sup>This is a simple class to execute code on entering and exiting media queries.</sup></p>
+<p><sup>This is a simple class for tracking changes in media expressions and calling the appropriate functions when these events are triggered.</sup></p>
 
 [![npm](https://img.shields.io/npm/v/media-trigger.svg?colorB=brightgreen)](https://www.npmjs.com/package/media-trigger)
 [![GitHub package version](https://img.shields.io/github/package-json/v/ux-ui-pro/media-trigger.svg)](https://github.com/ux-ui-pro/media-trigger)
@@ -24,7 +24,7 @@ $ yarn add media-trigger
 
 &#10148; **Import**
 ```javascript
-import MediaTrigger from 'media-trigger'
+import MediaTrigger from 'media-trigger';
 ```
 <br>
 
