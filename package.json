@@ -1,7 +1,7 @@
 {
   "name": "media-trigger",
-  "version": "2.0.2",
-  "description": "This is a simple function to run code on entry and exit from media queries",
+  "version": "2.1.0",
+  "description": "This is a simple class to execute code on entering and exiting media queries.",
   "author": "ux-ui.pro",
   "license": "MIT",
   "repository": {
@@ -11,16 +11,28 @@
   "bugs": {
     "url": "https://github.com/ux-ui-pro/media-trigger/issues"
   },
-  "source": "src/index.js",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
+  "targets": {
+    "main": {
+      "source": "src/index.js"
+    },
+    "module": {
+      "source": "src/index.js"
+    }
+  },
   "scripts": {
-    "serve": "parcel watch",
-    "build": "parcel build",
-    "clean": "rm -rf dist .parcel-cache"
+    "clean": "rm -rf dist .parcel-cache",
+    "build": "yarn clean && parcel build",
+    "lint:js": "eslint --ext .js",
+    "lintfix": "yarn lint:js --fix"
   },
   "devDependencies": {
-    "parcel": "~2.9.2"
+    "eslint": "^7.32.0 || ^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "parcel": "^2.11.0",
+    "postcss-html": "^1.6.0"
   },
   "keywords": [
     "media",

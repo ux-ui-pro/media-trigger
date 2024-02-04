@@ -1,28 +1,29 @@
-export default class MediaTrigger {
+class MediaTrigger {
 	constructor({ media, entry, exit, change }) {
-		this.MQ = window.matchMedia(media)
-		this.handleChange = this.handleChange.bind(this)
-		this.MQ.addEventListener('change', this.handleChange)
+		this.MQ = window.matchMedia(media);
+		this.MQ.addEventListener('change', this.handleChange);
+		this.prev = this.MQ.matches;
 
-		this.entry = entry
-		this.exit = exit
-		this.change = change
+		this.entry = entry;
+		this.exit = exit;
+		this.change = change;
 
-		this.trigger(this.MQ)
+		this.trigger();
 	}
 
-	trigger(MQ) {
-		const current = MQ.matches
+	trigger = () => {
+		const current = this.MQ.matches;
 
 		if (current !== this.prev) {
-			current ? this.entry?.(MQ) : this.exit?.(MQ)
-
-			this.change?.(MQ)
-			this.prev = current
+			current ? this.entry?.(this.MQ) : this.exit?.(this.MQ);
+			this.change?.(this.MQ);
+			this.prev = current;
 		}
-	}
+	};
 
-	handleChange() {
-		this.trigger(this.MQ)
-	}
+	handleChange = () => {
+		this.trigger();
+	};
 }
+
+export default MediaTrigger;

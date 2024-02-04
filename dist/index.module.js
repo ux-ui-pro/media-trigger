@@ -1,25 +1,26 @@
-class $cf838c15c8b009ba$export$2e2bcd8739ae039 {
-    constructor({ media: media , entry: entry , exit: exit , change: change  }){
+class $cf838c15c8b009ba$var$MediaTrigger {
+    constructor({ media: media, entry: entry, exit: exit, change: change }){
         this.MQ = window.matchMedia(media);
-        this.handleChange = this.handleChange.bind(this);
         this.MQ.addEventListener("change", this.handleChange);
+        this.prev = this.MQ.matches;
         this.entry = entry;
         this.exit = exit;
         this.change = change;
-        this.trigger(this.MQ);
+        this.trigger();
     }
-    trigger(MQ) {
-        const current = MQ.matches;
+    trigger = ()=>{
+        const current = this.MQ.matches;
         if (current !== this.prev) {
-            current ? this.entry?.(MQ) : this.exit?.(MQ);
-            this.change?.(MQ);
+            current ? this.entry?.(this.MQ) : this.exit?.(this.MQ);
+            this.change?.(this.MQ);
             this.prev = current;
         }
-    }
-    handleChange() {
-        this.trigger(this.MQ);
-    }
+    };
+    handleChange = ()=>{
+        this.trigger();
+    };
 }
+var $cf838c15c8b009ba$export$2e2bcd8739ae039 = $cf838c15c8b009ba$var$MediaTrigger;
 
 
 export {$cf838c15c8b009ba$export$2e2bcd8739ae039 as default};
