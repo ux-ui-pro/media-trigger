@@ -1,6 +1,6 @@
 {
   "name": "media-trigger",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "This is a simple class for tracking changes in media expressions and calling the appropriate functions when these events are triggered.",
   "author": "ux-ui.pro",
   "license": "MIT",
@@ -30,9 +30,7 @@
   "devDependencies": {
     "eslint": "^7.32.0 || ^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.29.1",
-    "parcel": "^2.11.0",
-    "postcss-html": "^1.6.0"
+    "parcel": "^2.11.0"
   },
   "keywords": [
     "media",
