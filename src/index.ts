@@ -17,7 +17,7 @@ class MediaTrigger {
     change?: ((mq: MediaQueryList) => void) | null;
   }) {
     if (!window.matchMedia) {
-      return;
+      throw new Error('matchMedia not supported');
     }
 
     this.MQ = window.matchMedia(media);
@@ -25,10 +25,6 @@ class MediaTrigger {
     this.exit = exit;
     this.change = change;
     this.prev = null;
-
-    this.MQ.addEventListener('change', this.handleChange);
-
-    this.trigger(this.MQ);
   }
 
   private trigger = ({ matches }: MediaQueryListEvent | MediaQueryList) => {
@@ -51,6 +47,11 @@ class MediaTrigger {
 
   private handleChange = (event: MediaQueryListEvent) => {
     this.trigger(event);
+  }
+
+  public init() {
+    this.MQ.addEventListener('change', this.handleChange);
+    this.trigger(this.MQ);
   }
 }
 

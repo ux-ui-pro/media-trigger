@@ -31,27 +31,20 @@ import MediaTrigger from 'media-trigger';
 
 &#10148; **Usage**
 ```javascript
-const createTrigger = (media, entry, exit, change) => {
-  return new MediaTrigger({
-    media,
-    entry,
-    exit,
-    change,
-  });
-};
+const mediaTrigger = new MediaTrigger({
+  media: '(min-width: 992px)',
+  entry: (mq) => {
+    console.log('Entered media query:', mq.media);
+  },
+  exit: (mq) => {
+    console.log('Exited media query:', mq.media);
+  },
+  change: (mq) => {
+    console.log('Media query change:', mq.media, 'matches:', mq.matches);
+  }
+});
 
-createTrigger(
-  '(min-width: 1200px) and (any-pointer: fine)',
-  () => {
-    console.log('entry');
-  },
-  () => {
-    console.log('exit');
-  },
-  () => {
-    console.log('changed');
-  },
-);
+mediaTrigger.init();
 ```
 <br>
 
