@@ -3,20 +3,21 @@
 
 <h1>media-trigger</h1>
 
-<p><sup>This is a simple class for tracking changes in media expressions and calling the appropriate functions when these events are triggered.</sup></p>
+<p><sup>MediaTrigger is designed to control the response to changes in media queries, allowing you to perform specific actions when entering or exiting a particular media state, or any change to a media state.</sup></p>
 
 [![npm](https://img.shields.io/npm/v/media-trigger.svg?colorB=brightgreen)](https://www.npmjs.com/package/media-trigger)
 [![GitHub package version](https://img.shields.io/github/package-json/v/ux-ui-pro/media-trigger.svg)](https://github.com/ux-ui-pro/media-trigger)
 [![NPM Downloads](https://img.shields.io/npm/dm/media-trigger.svg?style=flat)](https://www.npmjs.org/package/media-trigger)
 
 <sup>350B gzipped</sup>
-<h3><a href="https://codepen.io/ux-ui/pen/gOBQjzR">Demo</a></h3>
+
+<a href="https://codepen.io/ux-ui/pen/gOBQjzR">Demo</a>
 
 </div>
 <br>
 
 &#10148; **Install**
-```
+```console
 $ yarn add media-trigger
 ```
 

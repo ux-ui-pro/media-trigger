@@ -9,39 +9,30 @@ function $parcel$export(e, n, v, s) {
 
 $parcel$defineInteropFlag(module.exports);
 
-$parcel$export(module.exports, "default", () => $4fa36e821943b400$export$2e2bcd8739ae039);
-class $4fa36e821943b400$var$MediaTrigger {
-    #MQ;
-    #entry;
-    #exit;
-    #change;
-    #prev;
+$parcel$export(module.exports, "default", function () { return $a196c1ed25598f0e$export$2e2bcd8739ae039; });
+class $a196c1ed25598f0e$var$MediaTrigger {
     constructor({ media: media, entry: entry = null, exit: exit = null, change: change = null }){
+        this.trigger = ({ matches: matches })=>{
+            if (matches === this.prev) return;
+            if (matches && this.entry) this.entry(this.MQ);
+            else if (!matches && this.exit) this.exit(this.MQ);
+            if (this.change) this.change(this.MQ);
+            this.prev = matches;
+        };
+        this.handleChange = (event)=>{
+            this.trigger(event);
+        };
         if (!window.matchMedia) return;
-        this.#MQ = window.matchMedia(media);
-        this.#handleChange = this.#handleChange.bind(this);
-        this.#MQ.addEventListener("change", this.#handleChange);
-        this.#entry = entry;
-        this.#exit = exit;
-        this.#change = change;
-        this.#trigger(this.#MQ);
+        this.MQ = window.matchMedia(media);
+        this.entry = entry;
+        this.exit = exit;
+        this.change = change;
+        this.prev = null;
+        this.MQ.addEventListener("change", this.handleChange);
+        this.trigger(this.MQ);
     }
-    #trigger = ({ matches: matches })=>{
-        if (matches !== this.#prev) {
-            if (matches) {
-                if (this.#entry) this.#entry(this.#MQ);
-            } else if (this.#exit) this.#exit(this.#MQ);
-            if (this.#change) this.#change(this.#MQ);
-            this.#prev = matches;
-        }
-    };
-    #handleChange = ({ matches: matches })=>{
-        this.#trigger({
-            matches: matches
-        });
-    };
 }
-var $4fa36e821943b400$export$2e2bcd8739ae039 = $4fa36e821943b400$var$MediaTrigger;
+var $a196c1ed25598f0e$export$2e2bcd8739ae039 = $a196c1ed25598f0e$var$MediaTrigger;
 
 
 //# sourceMappingURL=index.js.map
