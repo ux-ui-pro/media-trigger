@@ -17,7 +17,7 @@ class MediaTrigger {
     change?: ((mq: MediaQueryList) => void) | null;
   }) {
     if (!window.matchMedia) {
-      throw new Error('matchMedia not supported');
+      return;
     }
 
     this.MQ = window.matchMedia(media);

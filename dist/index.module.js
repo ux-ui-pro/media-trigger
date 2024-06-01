@@ -5,7 +5,7 @@ class $643fcf18b2d2e76f$var$MediaTrigger {
     change;
     prev;
     constructor({ media: media, entry: entry = null, exit: exit = null, change: change = null }){
-        if (!window.matchMedia) throw new Error("matchMedia not supported");
+        if (!window.matchMedia) return;
         this.MQ = window.matchMedia(media);
         this.entry = entry;
         this.exit = exit;
