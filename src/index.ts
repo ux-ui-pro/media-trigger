@@ -1,15 +1,19 @@
 class MediaTrigger {
   private readonly MQ: MediaQueryList;
+
   private readonly entry: ((mq: MediaQueryList) => void) | null;
+
   private readonly exit: ((mq: MediaQueryList) => void) | null;
+
   private readonly change: ((mq: MediaQueryList) => void) | null;
+
   private prev: boolean | null;
 
   constructor({
     media,
     entry = null,
     exit = null,
-    change = null
+    change = null,
   }: {
     media: string;
     entry?: ((mq: MediaQueryList) => void) | null;
@@ -43,11 +47,11 @@ class MediaTrigger {
     }
 
     this.prev = matches;
-  }
+  };
 
   private handleChange = (event: MediaQueryListEvent) => {
     this.trigger(event);
-  }
+  };
 
   public init() {
     this.MQ.addEventListener('change', this.handleChange);
