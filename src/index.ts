@@ -1,13 +1,8 @@
 class MediaTrigger {
-  private readonly MQ: MediaQueryList;
-
-  private readonly entry: ((mq: MediaQueryList) => void) | null;
-
-  private readonly exit: ((mq: MediaQueryList) => void) | null;
-
-  private readonly change: ((mq: MediaQueryList) => void) | null;
-
-  private prev: boolean | null;
+  private readonly MQ!: MediaQueryList;
+  private readonly entry!: ((mq: MediaQueryList) => void) | null;
+  private readonly exit!: ((mq: MediaQueryList) => void) | null;
+  private readonly change!: ((mq: MediaQueryList) => void) | null;
 
   constructor({
     media,
@@ -28,13 +23,10 @@ class MediaTrigger {
     this.entry = entry;
     this.exit = exit;
     this.change = change;
-    this.prev = null;
   }
 
-  private trigger = ({ matches }: MediaQueryListEvent | MediaQueryList) => {
-    if (matches === this.prev) {
-      return;
-    }
+  private trigger = (event: MediaQueryListEvent | MediaQueryList): void => {
+    const matches = event instanceof MediaQueryList ? event.matches : event.matches;
 
     if (matches && this.entry) {
       this.entry(this.MQ);
@@ -42,20 +34,20 @@ class MediaTrigger {
       this.exit(this.MQ);
     }
 
-    if (this.change) {
-      this.change(this.MQ);
-    }
-
-    this.prev = matches;
+    this.change?.(this.MQ);
   };
 
-  private handleChange = (event: MediaQueryListEvent) => {
+  private handleChange = (event: MediaQueryListEvent): void => {
     this.trigger(event);
   };
 
-  public init() {
+  public init(): void {
     this.MQ.addEventListener('change', this.handleChange);
     this.trigger(this.MQ);
+  }
+
+  public destroy(): void {
+    this.MQ.removeEventListener('change', this.handleChange);
   }
 }
 

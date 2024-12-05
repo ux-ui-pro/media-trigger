@@ -9,7 +9,7 @@
 [![GitHub package version](https://img.shields.io/github/package-json/v/ux-ui-pro/media-trigger.svg)](https://github.com/ux-ui-pro/media-trigger)
 [![NPM Downloads](https://img.shields.io/npm/dm/media-trigger.svg?style=flat)](https://www.npmjs.org/package/media-trigger)
 
-<sup>350B gzipped</sup>
+<sup>400B gzipped</sup>
 
 <a href="https://codepen.io/ux-ui/pen/gOBQjzR">Demo</a>
 
@@ -46,6 +46,52 @@ const mediaTrigger = new MediaTrigger({
 
 mediaTrigger.init();
 ```
+<br>
+
+&#10148; **Options**
+
+|  Option  |         Type         |  Default   | Description                                                                                |
+|:--------:|:--------------------:|:----------:|:-------------------------------------------------------------------------------------------|
+| `media`  |       `string`       | `Required` | The media query string to be observed.                                                     |
+| `entry`  | `function` \| `null` |   `null`   | Callback function invoked when the media query starts matching (`matches` becomes `true`). |
+|  `exit`  | `function` \| `null` |   `null`   | Callback function invoked when the media query stops matching (`matches` becomes `false`). |
+| `change` | `function` \| `null` |   `null`   | Callback function invoked on any change in the media query's matching state.               |
+<br>
+
+&#10148; **Methods**
+
+| Method      | Description                                                                    |
+|:------------|:-------------------------------------------------------------------------------|
+| `init()`    | Initializes the media query listener and triggers the initial state callbacks. |
+| `destroy()` | Removes the media query listener to stop observing changes.                    |
+<br>
+
+&#10148; **Example**
+
+```javascript
+// Initialize a MediaTrigger instance
+const mediaTrigger = new MediaTrigger({
+  media: '(max-width: 768px)',
+  entry: (mq) => {
+    console.log('Screen is now less than or equal to 768px wide.');
+  },
+  exit: (mq) => {
+    console.log('Screen is now wider than 768px.');
+  }
+});
+
+// Start listening to media query changes
+mediaTrigger.init();
+
+// Later, if you want to stop listening
+mediaTrigger.destroy();
+```
+<br>
+
+&#10148; **Browser Support**
+
+MediaTrigger relies on the window.matchMedia API, which is supported in all modern browsers. If window.matchMedia is not available, MediaTrigger will safely do nothing.
+
 <br>
 
 &#10148; **License**
