@@ -9,7 +9,7 @@
 [![GitHub package version](https://img.shields.io/github/package-json/v/ux-ui-pro/media-trigger.svg)](https://github.com/ux-ui-pro/media-trigger)
 [![NPM Downloads](https://img.shields.io/npm/dm/media-trigger.svg?style=flat)](https://www.npmjs.org/package/media-trigger)
 
-<sup>400B gzipped</sup>
+<sup>0.5kB gzipped</sup>
 
 <a href="https://codepen.io/ux-ui/pen/gOBQjzR">Demo</a>
 
