@@ -1,6 +1,6 @@
 {
   "name": "media-trigger",
-  "version": "4.2.1",
+  "version": "4.3.0",
   "description": "MediaTrigger is designed to control the response to changes in media queries, allowing you to perform specific actions when entering or exiting a particular media state, or any change to a media state.",
   "author": "ux-ui.pro",
   "license": "MIT",
